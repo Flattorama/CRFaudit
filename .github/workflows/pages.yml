@@ -24,8 +24,7 @@ jobs:
           node-version: 20
       - run: npm install --no-audit --no-fund
       - run: npm run build
-      # SPA fallback so refresh on deep links works
-      - run: cp dist/index.html dist/404.html
+      - run: cp dist/index.html dist/404.html   # SPA refresh support
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
